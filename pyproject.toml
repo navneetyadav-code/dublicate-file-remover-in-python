@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safe-duplicate-finder"
+version = "1.0.0"
+description = "Windows desktop app for finding and safely recycling duplicate files."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "customtkinter>=5.2.2",
+    "send2trash>=1.8.3",
+    "Pillow>=10.4.0",
+]
+
+[project.optional-dependencies]
+build = [
+    "pyinstaller>=6.10.0",
+]
+
+[project.scripts]
+safe-duplicate-finder = "duplicate_finder.main:main"
+
+[tool.setuptools.packages.find]
+include = ["duplicate_finder*"]
